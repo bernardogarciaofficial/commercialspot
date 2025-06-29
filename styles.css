@@ -1,1 +1,93 @@
+/* Black and yellow diagonal lines background */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
 
+.background-lines {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      #111 0px,
+      #111 32px,
+      #FFD600 32px,
+      #FFD600 64px
+    );
+  opacity: 0.88;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tv-container {
+  background: rgba(0,0,0,0.92);
+  border-radius: 32px;
+  box-shadow: 0 0 48px 8px #FFD60077;
+  padding: 32px 32px 56px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90vw;
+  max-height: 85vh;
+}
+
+.tv-screen {
+  width: 76vw;
+  max-width: 1200px;
+  height: 43vw;
+  max-height: 680px;
+  min-width: 320px;
+  min-height: 180px;
+  background: #000;
+  border: 6px solid #FFD600;
+  border-radius: 24px;
+  box-shadow: 0 0 32px #000c;
+  display: block;
+}
+
+.tv-label {
+  margin-top: 18px;
+  color: #FFD600;
+  background: #111;
+  border-radius: 14px;
+  padding: 9px 30px;
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  box-shadow: 0 2px 18px #FFD60099;
+  text-align: center;
+  text-shadow: 2px 2px 8px #000, 0 0 16px #FFD600;
+  user-select: none;
+}
+
+@media (max-width: 700px) {
+  .tv-container {
+    padding: 5vw 2vw 9vw 2vw;
+    border-radius: 20px;
+  }
+  .tv-screen {
+    width: 96vw;
+    height: 56vw;
+    border-width: 3px;
+    border-radius: 10px;
+  }
+  .tv-label {
+    font-size: 1.1rem;
+    border-radius: 8px;
+    padding: 6px 10px;
+  }
+}
